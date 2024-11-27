@@ -1,21 +1,30 @@
 // Array of image paths
 const images = [
-    "./ethnography_pics/surfbroke.jpg",
     "./ethnography_pics/2.jpeg",
     "./ethnography_pics/3.jpeg",
     "./ethnography_pics/4.jpeg",
     "./ethnography_pics/5.jpeg",
     "./ethnography_pics/1.jpeg"
 ];
+const subtitles = [
+    "Relaxing at The Wreck in Byron Bay after a surf session.",
+    "The interior of Burleigh Board Makers.",
+    "A fitting piece of artwork from Burleigh Board Makers.",
+    "Vibrant art from Burleigh Board Makers.",
+    "My friend and I taking to the waves at Cabarita with our brand new Facebook Marketplace boards.",
+]
 
 // Select the image element
 const slideshowImage = document.getElementById('slideshow');
+const imageSubtitle = document.getElementById('subtitle')
 const button1 = document.getElementById('button1');
 const button2 = document.getElementById('button2');
 const button3 = document.getElementById('button3');
 const drop1 = document.getElementById('dropdown1');
 const drop2 = document.getElementById('dropdown2');
 const drop3 = document.getElementById('dropdown3');
+const leftbutton = document.getElementById('left');
+const rightbutton = document.getElementById('right');
 
 // Initialize index
 let currentIndex = 0;
@@ -27,6 +36,7 @@ function changeImage() {
 
     // Update the image source
     slideshowImage.src = images[currentIndex];
+    imageSubtitle.innerText = subtitles[currentIndex];
 }
 button1.addEventListener('click', function() {
     
@@ -65,3 +75,28 @@ button3.addEventListener('click', function() {
 
 // Set an interval to change the image every 10 seconds
 setInterval(changeImage, 10000);
+
+leftbutton.addEventListener('click', function(){
+    if (currentIndex == 0){
+        currentIndex = 4;
+        slideshowImage.src = images[currentIndex];
+    imageSubtitle.innerText = subtitles[currentIndex];
+    }
+    else {
+        currentIndex -=1;
+        slideshowImage.src = images[currentIndex];
+    imageSubtitle.innerText = subtitles[currentIndex];
+    }
+})
+rightbutton.addEventListener('click', function(){
+    if (currentIndex == 4){
+        currentIndex = 0;
+        slideshowImage.src = images[currentIndex];
+    imageSubtitle.innerText = subtitles[currentIndex];
+    }
+    else {
+        currentIndex +=1;
+        slideshowImage.src = images[currentIndex];
+    imageSubtitle.innerText = subtitles[currentIndex];
+    }
+})

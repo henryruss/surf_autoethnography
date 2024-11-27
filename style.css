@@ -47,22 +47,34 @@ body{
 .content{
     display: flex;
     width: 100vw;
-    background-color: #89a7b2;
+    align-items: center;
+    background-color: #365c65
 }
 .blog_container{
-    flex: 3
+    flex: 3;
+    background-color: #89a7b2;
 }
 .photowall{
+    display: flex;
+    flex-direction: column;
     flex: 1;
-    padding: 0px;
-    margin: 0px;
+    background-color: #365c65;
+    min-height: 74;
+    
+    padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .photowall .photo{
     width: 100%
 }
 .blog_title{
-    color: #0b3647;
-    
+    color: #fdf6e5;
+    margin: 0px;
+    font-size: 2em;
+    min-height: 74;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 p{
@@ -86,6 +98,9 @@ p{
     opacity: .7;
     border: 0px;
     color: #0b3647;
+    font-size: 1.5em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .blog_text button:hover{
     background-color: gray;
@@ -107,4 +122,79 @@ p{
     height: auto;
     visibility: visible;
     transition: height 0.3s ease, visibility 0.3s ease;
+    background-color: #365c65;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
 }
+
+.blog_header{
+    display: flex;
+    flex-direction: row;
+    background-color: #365c65;
+}
+
+.second_row{
+    display: flex;
+}
+
+.blog_text{
+    flex: 9
+}
+
+.photowall{
+    flex: 4
+}
+
+.blog_title{
+    flex: 9;
+}
+.blog_title p{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.photowall_text{
+    flex: 4;
+    text-align: center;
+    color:#fdf6e5;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.photo_subtitle{
+    color: #fdf6e5;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.footer{
+    display: flex;
+    color: green;
+    flex-direction: column;
+    background-image: url("./ethnography_pics/surfbroke.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 30vw;
+    
+    align-items: center;
+}
+
+button p{
+    color:#0b3647;
+    font-weight: 900;
+}
+
+.blog_text p::first-letter{
+ color: #0b3647;
+ font-size: 2em;
+ font-weight: 600;
+}
+.blog_text .visible p::first-letter{
+    color: #89a7b2;
+    font-size: 2em;
+    font-weight: 600;
+   }
